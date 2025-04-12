@@ -1,0 +1,43 @@
+{
+  "name": "@triforce-heroes/triforce-lbrs",
+  "description": "Extract and rebuild LBRS files.",
+  "version": "1.0.0",
+  "license": "Apache License 2.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./Extract": {
+      "default": "./dist/Extract.js",
+      "types": "./dist/Extract.d.ts"
+    },
+    "./Rebuild": {
+      "default": "./dist/Rebuild.js",
+      "types": "./dist/Rebuild.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tspc -p ./tsconfig.build.json && swc ./dist -d .",
+    "prettier": "prettier --check ./src ./tests",
+    "prettier:fix": "prettier --write ./src ./tests",
+    "eslint": "eslint ./src ./tests",
+    "eslint:fix": "eslint --fix ./src ./tests",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@rheactor/eslint-config-rheactor": "github:rheactor/eslint-config-rheactor",
+    "@swc/cli": "^0.6.0",
+    "@swc/core": "^1.11.20",
+    "@triforce-heroes/triforce-core": "github:triforce-heroes/triforce-core",
+    "@types/node": "^22.14.1",
+    "@vitest/coverage-v8": "^3.1.1",
+    "eslint": "^9.24.0",
+    "rimraf": "^6.0.1",
+    "ts-patch": "^3.3.0",
+    "typescript": "^5.8.3",
+    "typescript-transform-paths": "^3.5.5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.1.1"
+  }
+}
