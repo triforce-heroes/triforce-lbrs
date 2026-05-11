@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,14 +15,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
+    "types": ["node"],
 
     "paths": {
-      "@/*": ["src/*"],
-      "@Tests/*": ["tests/*"]
+      "@/*": ["./src/*"],
+      "@Tests/*": ["./tests/*"]
     },
-    "plugins": [
-      { "transform": "typescript-transform-paths", "afterDeclarations": true }
-    ]
+    "plugins": [{ "transform": "typescript-transform-paths", "afterDeclarations": true }]
   },
 
   "include": ["**/*.ts", "tests/**/*.ts", "vitest.config.ts"],
