@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 import { extract } from "@/Extract";
-import { rebuild } from "@/Rebuild";
+import { rebuildRaw } from "@/Rebuild";
 
 describe("extract() function", () => {
   it("extract()", () => {
@@ -13,7 +13,7 @@ describe("extract() function", () => {
 
     expect({ fileId, pathId, entries }).toMatchSnapshot();
 
-    const rebuilded = rebuild(fileId, pathId, entries);
+    const rebuilded = rebuildRaw(fileId, pathId, entries);
 
     writeFileSync("tests/fixtures/texts.lbrs.rebuilded", rebuilded);
 

@@ -2,7 +2,9 @@ import { BufferBuilder } from "@triforce-heroes/triforce-core/BufferBuilder";
 
 import type { Entry } from "@/types/Entry";
 
-export function rebuild(fileId: number, pathId: number, entries: Entry[]) {
+import { extract } from "@/Extract";
+
+export function rebuildRaw(fileId: number, pathId: number, entries: Entry[]) {
   const builder = new BufferBuilder();
 
   // Header #1.
@@ -33,4 +35,27 @@ export function rebuild(fileId: number, pathId: number, entries: Entry[]) {
   }
 
   return builder.build();
+}
+
+export function rebuild(data: Buffer, entries: Map<string, string>, indexes: number[]) {
+  const { fileId, pathId, entries: originalEntries } = extract(data);
+
+  const modifiedEntries: Entry[] = originalEntries.map(([name, translations]) => {
+    if (!entries.has(name)) {
+      return [name, translations];
+    }
+
+    const value = entries.get(name)!;
+    const newTranslations = [...translations];
+
+    for (const index of indexes) {
+      if (index < newTranslations.length) {
+        newTranslations[index] = value;
+      }
+    }
+
+    return [name, newTranslations];
+  });
+
+  return rebuildRaw(fileId, pathId, modifiedEntries);
 }

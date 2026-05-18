@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`rebuild() function > [#0] rebuild(0, 1, ...) 1`] = `
+exports[`rebuildRaw() function > [#0] rebuildRaw(0, 1, ...) 1`] = `
 {
   "data": [
     0,
@@ -52,7 +52,7 @@ exports[`rebuild() function > [#0] rebuild(0, 1, ...) 1`] = `
 }
 `;
 
-exports[`rebuild() function > [#1] rebuild(0, 2, ...) 1`] = `
+exports[`rebuildRaw() function > [#1] rebuildRaw(0, 2, ...) 1`] = `
 {
   "data": [
     0,
@@ -172,7 +172,7 @@ exports[`rebuild() function > [#1] rebuild(0, 2, ...) 1`] = `
 }
 `;
 
-exports[`rebuild() function > [#2] rebuild(0, 3, ...) 1`] = `
+exports[`rebuildRaw() function > [#2] rebuildRaw(0, 3, ...) 1`] = `
 {
   "data": [
     0,
@@ -264,7 +264,7 @@ exports[`rebuild() function > [#2] rebuild(0, 3, ...) 1`] = `
 }
 `;
 
-exports[`rebuild() function > [#3] rebuild(0, 4, ...) 1`] = `
+exports[`rebuildRaw() function > [#3] rebuildRaw(0, 4, ...) 1`] = `
 {
   "data": [
     0,
@@ -344,7 +344,7 @@ exports[`rebuild() function > [#3] rebuild(0, 4, ...) 1`] = `
 }
 `;
 
-exports[`rebuild() function > [#4] rebuild(0, 5, ...) 1`] = `
+exports[`rebuildRaw() function > [#4] rebuildRaw(0, 5, ...) 1`] = `
 {
   "data": [
     0,
@@ -452,7 +452,7 @@ exports[`rebuild() function > [#4] rebuild(0, 5, ...) 1`] = `
 }
 `;
 
-exports[`rebuild() function > [#5] rebuild(0, 6, ...) 1`] = `
+exports[`rebuildRaw() function > [#5] rebuildRaw(0, 6, ...) 1`] = `
 {
   "data": [
     0,
